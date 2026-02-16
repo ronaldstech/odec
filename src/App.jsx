@@ -8,6 +8,8 @@ import Projects from './pages/Projects';
 import Mission from './pages/Mission';
 import Contact from './pages/Contact';
 
+import Newsletters from './pages/Newsletters';
+
 function App() {
   return (
     <Router>
@@ -17,6 +19,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/mission" element={<Mission />} />
+          <Route path="/newsletters" element={<Newsletters />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Layout>
