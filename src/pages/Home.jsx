@@ -20,10 +20,11 @@ const Home = () => {
     };
 
     const priorities = [
-        { title: 'Smart Agriculture', icon: <Wheat className="w-8 h-8" />, desc: 'Promoting irrigation and water harvesting for food security.' },
-        { title: 'Health & Protection', icon: <HeartPulse className="w-8 h-8" />, desc: 'Safeguarding maternity health and talents through sports.' },
-        { title: 'Quality Education', icon: <GraduationCap className="w-8 h-8" />, desc: 'Building inclusive and modern infrastructure for learning.' },
-        { title: 'Climate Action', icon: <CloudRain className="w-8 h-8" />, desc: 'Disaster risk reduction and reforestation of lost resources.' },
+        { title: 'Climate Smart Enterprises', icon: <Wheat className="w-8 h-8" />, desc: 'Building sustainable businesses that adapt to climate change and create resilient livelihoods.' },
+        { title: 'Public Health Care', icon: <HeartPulse className="w-8 h-8" />, desc: 'Ensuring accessible, quality healthcare services for all community members.' },
+        { title: 'Sustainable Community Initiatives', icon: <Users className="w-8 h-8" />, desc: 'Empowering communities through collaborative, long-term development projects.' },
+        { title: 'Innovation & Tech Skills', icon: <GraduationCap className="w-8 h-8" />, desc: 'Equipping youth with cutting-edge technological and entrepreneurial capabilities.' },
+        { title: 'Smart Agriculture & Value Addition', icon: <CloudRain className="w-8 h-8" />, desc: 'Transforming farming through technology and adding value to agricultural products.' },
     ];
 
     return (
@@ -93,14 +94,23 @@ const Home = () => {
             </section>
 
             {/* --- Priority Areas --- */}
-            <section className="py-32 relative">
+            <section className="py-32 relative bg-gradient-to-b from-white to-slate-50">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
                         <div className="max-w-2xl">
-                            <h2 className="text-4xl md:text-5xl font-black text-[var(--color-primary-900)] mb-6">Core Priorities</h2>
-                            <p className="text-lg text-slate-500">Transformative development projects that uncover local wealth.</p>
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                            >
+                                <span className="inline-block px-4 py-2 rounded-full bg-[var(--color-primary-100)] text-[var(--color-primary-700)] text-sm font-bold mb-4">
+                                    What We Do
+                                </span>
+                                <h2 className="text-4xl md:text-5xl font-black text-[var(--color-primary-900)] mb-6">Core Priorities</h2>
+                                <p className="text-lg text-slate-500">Transformative development projects that uncover local wealth and build sustainable futures.</p>
+                            </motion.div>
                         </div>
-                        <div className="h-1 w-24 bg-[var(--color-primary-500)] hidden md:block mb-4" />
+                        <div className="h-1 w-24 bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] hidden md:block mb-4 rounded-full" />
                     </div>
 
                     <motion.div
@@ -108,20 +118,76 @@ const Home = () => {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
-                        className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+                        className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
                     >
-                        {priorities.map((item, index) => (
-                            <motion.div key={index} variants={itemVariants}>
-                                <Card className="group relative h-full bg-white p-8 rounded-3xl border-none shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.1)] hover:-translate-y-3 transition-all duration-500">
-                                    <div className="w-14 h-14 rounded-2xl bg-slate-50 text-[var(--color-primary-600)] flex items-center justify-center mb-8 group-hover:bg-[var(--color-primary-600)] group-hover:text-white transition-all duration-300">
-                                        {item.icon}
+                        {priorities.map((item, index) => {
+                            const gradients = [
+                                'from-emerald-500/10 to-teal-500/10',
+                                'from-blue-500/10 to-cyan-500/10',
+                                'from-purple-500/10 to-pink-500/10',
+                                'from-orange-500/10 to-red-500/10',
+                                'from-green-500/10 to-lime-500/10'
+                            ];
+                            const iconColors = [
+                                'text-emerald-600',
+                                'text-blue-600',
+                                'text-purple-600',
+                                'text-orange-600',
+                                'text-green-600'
+                            ];
+                            const hoverGradients = [
+                                'group-hover:from-emerald-500 group-hover:to-teal-500',
+                                'group-hover:from-blue-500 group-hover:to-cyan-500',
+                                'group-hover:from-purple-500 group-hover:to-pink-500',
+                                'group-hover:from-orange-500 group-hover:to-red-500',
+                                'group-hover:from-green-500 group-hover:to-lime-500'
+                            ];
+
+                            return (
+                                <motion.div key={index} variants={itemVariants}>
+                                    <div className="group relative h-full bg-white rounded-[2rem] p-8 border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                                        {/* Gradient Background */}
+                                        <div className={`absolute inset-0 bg-gradient-to-br ${gradients[index]} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+
+                                        {/* Animated Border */}
+                                        <div className={`absolute inset-0 rounded-[2rem] bg-gradient-to-br ${hoverGradients[index]} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} style={{ padding: '2px' }}>
+                                            <div className="w-full h-full bg-white rounded-[2rem]" />
+                                        </div>
+
+                                        {/* Content */}
+                                        <div className="relative z-10">
+                                            {/* Icon Container */}
+                                            <div className="mb-6">
+                                                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${gradients[index]} flex items-center justify-center ${iconColors[index]} group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-md`}>
+                                                    {item.icon}
+                                                </div>
+                                            </div>
+
+                                            {/* Title */}
+                                            <h3 className="text-xl font-black mb-4 text-slate-900 group-hover:text-[var(--color-primary-700)] transition-colors duration-300">
+                                                {item.title}
+                                            </h3>
+
+                                            {/* Description */}
+                                            <p className="text-slate-600 leading-relaxed text-sm">
+                                                {item.desc}
+                                            </p>
+
+                                            {/* Decorative Element */}
+                                            <div className="mt-6 pt-6 border-t border-slate-100 group-hover:border-transparent transition-colors duration-300">
+                                                <div className="flex items-center gap-2 text-[var(--color-primary-600)] font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <span>Learn More</span>
+                                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Corner Accent */}
+                                        <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[var(--color-primary-400)]/10 to-transparent rounded-bl-[3rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                     </div>
-                                    <h3 className="text-xl font-bold mb-4 text-slate-900">{item.title}</h3>
-                                    <p className="text-slate-500 leading-relaxed">{item.desc}</p>
-                                    <div className="absolute bottom-0 left-0 w-full h-1 bg-[var(--color-primary-500)] scale-x-0 group-hover:scale-x-100 transition-transform origin-left rounded-b-3xl" />
-                                </Card>
-                            </motion.div>
-                        ))}
+                                </motion.div>
+                            );
+                        })}
                     </motion.div>
                 </div>
             </section>

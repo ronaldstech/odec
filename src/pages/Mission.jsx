@@ -7,38 +7,45 @@ const Mission = () => {
     const coreValues = [
         {
             title: 'Self-Reliance',
-            description: 'ODEC stands to deliver development actions that create resilience. People will be movers of their own sustainable initiatives.',
+            description: 'Delivering development actions that create resilience. People will be movers of their own initiatives that are sustainable.',
             icon: <Zap className="w-6 h-6" />,
             color: 'from-emerald-400 to-emerald-600',
             bg: 'bg-emerald-50'
         },
         {
-            title: 'Equality',
-            description: 'Encouraging fairness where communities are unhampered by artificial barriers or preferences in their pursuit of growth.',
+            title: 'Equality of Opportunity',
+            description: 'Encouraging fairness where individuals are treated similarly, unhampered by artificial barriers or preferences.',
             icon: <Scale className="w-6 h-6" />,
             color: 'from-blue-400 to-blue-600',
             bg: 'bg-blue-50'
         },
         {
+            title: 'Public Health',
+            description: 'Promoting effective public health policies and allocation of resources for health-related programs.',
+            icon: <Heart className="w-6 h-6" />,
+            color: 'from-rose-400 to-rose-600',
+            bg: 'bg-rose-50'
+        },
+        {
+            title: 'Environmental Management',
+            description: 'Investing in permaculture, diversified farming, and sustainable ecosystems for food security.',
+            icon: <ShieldCheck className="w-6 h-6" />,
+            color: 'from-green-400 to-green-600',
+            bg: 'bg-green-50'
+        },
+        {
             title: 'Collective Action',
-            description: 'Promoting social action, joint cooperation, and collaboration with communities and stakeholders for shared success.',
+            description: 'Promoting social action, joint cooperation, and collaboration with communities and stakeholders.',
             icon: <Users className="w-6 h-6" />,
             color: 'from-amber-400 to-amber-600',
             bg: 'bg-amber-50'
         },
         {
-            title: 'Transparency',
-            description: 'Maintaining discipline in operations and honesty in handling resources. Open communication with all stakeholders.',
+            title: 'Accountability',
+            description: 'Holding ourselves to the highest ethical behavior and integrity, accountable to members, beneficiaries, and partners.',
             icon: <FileText className="w-6 h-6" />,
             color: 'from-cyan-400 to-cyan-600',
             bg: 'bg-cyan-50'
-        },
-        {
-            title: 'Integrity',
-            description: 'An independent, non-political entity working with a high sense of openness, honesty, and institutional autonomy.',
-            icon: <Heart className="w-6 h-6" />,
-            color: 'from-rose-400 to-rose-600',
-            bg: 'bg-rose-50'
         },
     ];
 

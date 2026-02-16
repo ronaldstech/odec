@@ -37,8 +37,8 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-bold mb-1">Email Us</h4>
-                                    <p className="text-[var(--color-text-muted)]">info@odec.org</p>
-                                    <p className="text-[var(--color-text-muted)]">support@odec.org</p>
+                                    <p className="text-[var(--color-text-muted)]">odecmw@gmail.com</p>
+                                    <p className="text-[var(--color-text-muted)]">odec24@gmail.com</p>
                                 </div>
                             </div>
 
@@ -48,8 +48,8 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-bold mb-1">Call Us</h4>
-                                    <p className="text-[var(--color-text-muted)]">+1 (234) 567-890</p>
-                                    <p className="text-[var(--color-text-muted)]">Mon-Fri, 9am - 6pm</p>
+                                    <p className="text-[var(--color-text-muted)]">+265 (0) 993 452 511</p>
+                                    <p className="text-[var(--color-text-muted)]">+265 (0) 998 523 213</p>
                                 </div>
                             </div>
 
@@ -59,8 +59,8 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-bold mb-1">Visit Us</h4>
-                                    <p className="text-[var(--color-text-muted)]">123 Green Avenue,</p>
-                                    <p className="text-[var(--color-text-muted)]">Nature City, NC 12345</p>
+                                    <p className="text-[var(--color-text-muted)]">Benga Community Development Centre</p>
+                                    <p className="text-[var(--color-text-muted)]">P/B 5 Benga, Nkhotakota, Malawi</p>
                                 </div>
                             </div>
                         </div>
@@ -133,13 +133,13 @@ const Contact = () => {
                 <div className="container mx-auto">
                     <div className="w-full h-[500px] rounded-[3rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158857.7281066703!2d-0.24168144921875!3d51.5283084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!5e0!3m2!1sen!2suk!4v1625070000000!5m2!1sen!2suk"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3932.2125358946732!2d34.25924717514127!3d-13.370786586982462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x191fc59af8d5f183%3A0xf08cd9b724602232!2sBenga%20trading%20centre!5e1!3m2!1sen!2smw!4v1771230866740!5m2!1sen!2smw"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
-                            allowFullScreen=""
+                            allowfullscreen=""
                             loading="lazy"
-                        ></iframe>
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </section>

@@ -34,10 +34,11 @@ const Footer = () => {
                 <div>
                     <h4 className="text-xl font-bold mb-6 text-[var(--color-accent-400)]">Our Focus</h4>
                     <ul className="space-y-4">
-                        <li><span className="text-[var(--color-primary-200)]">Reforestation</span></li>
-                        <li><span className="text-[var(--color-primary-200)]">Sustainable Farming</span></li>
-                        <li><span className="text-[var(--color-primary-200)]">Clean Water Access</span></li>
-                        <li><span className="text-[var(--color-primary-200)]">Community Education</span></li>
+                        <li><span className="text-[var(--color-primary-200)]">Climate Smart Enterprises</span></li>
+                        <li><span className="text-[var(--color-primary-200)]">Public Health Care</span></li>
+                        <li><span className="text-[var(--color-primary-200)]">Sustainable Community Initiatives</span></li>
+                        <li><span className="text-[var(--color-primary-200)]">Innovation & Tech Skills</span></li>
+                        <li><span className="text-[var(--color-primary-200)]">Smart Agriculture & Value Addition</span></li>
                     </ul>
                 </div>
 
@@ -46,15 +47,15 @@ const Footer = () => {
                     <ul className="space-y-4">
                         <li className="flex items-center gap-3">
                             <Mail className="w-5 h-5 text-[var(--color-primary-400)]" />
-                            <span>info@odec.org</span>
+                            <span>odec24@gmail.com</span>
                         </li>
                         <li className="flex items-center gap-3">
                             <Phone className="w-5 h-5 text-[var(--color-primary-400)]" />
-                            <span>+123 456 7890</span>
+                            <span>+265 993 452 511</span>
                         </li>
                         <li className="flex items-center gap-3">
                             <MapPin className="w-5 h-5 text-[var(--color-primary-400)]" />
-                            <span>123 Green Ave, Nature City</span>
+                            <span>Benga, Nkhotakota, Malawi</span>
                         </li>
                     </ul>
                 </div>

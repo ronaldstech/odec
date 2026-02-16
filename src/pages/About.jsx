@@ -163,10 +163,10 @@ const About = () => {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
-                            { role: 'Executive Director', icon: <Users2 className="w-6 h-6" /> },
-                            { role: 'Program Manager', icon: <Activity className="w-6 h-6" /> },
-                            { role: 'Finance Officer', icon: <TrendingUp className="w-6 h-6" /> },
-                            { role: 'Field Operations', icon: <Globe className="w-6 h-6" /> }
+                            { role: 'Executive Director', name: "JOSEPH KITHA", icon: <Users2 className="w-6 h-6" /> },
+                            { role: 'Program Manager', name: "", icon: <Activity className="w-6 h-6" /> },
+                            { role: 'Finance Officer', name: "MWAWI SOPHIE CHIRWA", icon: <TrendingUp className="w-6 h-6" /> },
+                            { role: 'SECRETARY GENERAL', name: "VINCENT MSOLIZA", icon: <Globe className="w-6 h-6" /> }
                         ].map((member, i) => (
                             <motion.div
                                 key={i}
@@ -186,8 +186,8 @@ const About = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-900">{member.role}</h3>
-                                <p className="text-slate-500 text-sm font-medium uppercase tracking-wider mt-1">Leadership Team</p>
+                                <h3 className="text-xl font-bold text-slate-900">{member.name}</h3>
+                                <p className="text-slate-500 text-sm font-medium uppercase tracking-wider mt-1">{member.role}</p>
                             </motion.div>
                         ))}
                     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Card = ({ children, className = '', hoverEffect = true, delay = 0 }) => {
+const Card = ({ children, className = '', hoverEffect = true, delay = 0, onClick }) => {
     const hasBg = className.includes('bg-');
     const hasBorder = className.includes('border-');
 
@@ -16,6 +16,7 @@ const Card = ({ children, className = '', hoverEffect = true, delay = 0 }) => {
                 boxShadow: "0 20px 40px rgba(0,0,0,0.08)",
                 borderColor: "var(--color-primary-300)"
             } : {}}
+            onClick={onClick}
             className={`${!hasBg ? 'bg-white' : ''} ${!hasBorder ? 'border border-slate-100' : ''} rounded-[2.5rem] p-8 transition-all duration-500 ${className}`}
         >
             {children}
