@@ -22,7 +22,15 @@ const Navbar = () => {
         { name: 'About Us', path: '/about' },
         { name: 'Projects', path: '/projects' },
         { name: 'Mission', path: '/mission' },
-        { name: 'Newsletters', path: '/newsletters' },
+        {
+            name: 'Newsletters',
+            path: '/newsletters',
+            dropdown: [
+                { name: 'Latest News', path: '/newsletters' },
+                { name: 'Annual Reports', path: '/reports' },
+                { name: 'Impact Stories', path: '/impact-stories' }
+            ]
+        },
         { name: 'Contact', path: '/contact' },
     ];
 
@@ -50,39 +58,69 @@ const Navbar = () => {
                 <div className="hidden md:flex items-center gap-8">
                     <div className="flex items-center gap-2 p-1.5 bg-[var(--color-primary-900)]/5 rounded-full border border-white/20">
                         {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                to={link.path}
-                                className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 relative group
-                                    ${isActive(link.path)
-                                        ? 'text-white'
-                                        : 'text-[var(--color-text-main)] hover:text-[var(--color-primary-700)]'
-                                    }`}
-                            >
-                                <span className="relative z-10">{link.name}</span>
-                                {isActive(link.path) && (
-                                    <motion.div
-                                        layoutId="navPill"
-                                        className="absolute inset-0 bg-[var(--color-primary-800)] rounded-full shadow-lg shadow-[var(--color-primary-800)]/30 z-0"
-                                        initial={false}
-                                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                                    />
+                            <div key={link.name} className="relative group">
+                                <Link
+                                    to={link.path}
+                                    className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 relative block
+                                        ${isActive(link.path)
+                                            ? 'text-white'
+                                            : 'text-[var(--color-text-main)] hover:text-[var(--color-primary-700)]'
+                                        }`}
+                                >
+                                    <span className="relative z-10 flex items-center gap-1">
+                                        {link.name}
+                                        {link.dropdown && (
+                                            <svg className="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        )}
+                                    </span>
+                                    {isActive(link.path) && (
+                                        <motion.div
+                                            layoutId="navPill"
+                                            className="absolute inset-0 bg-[var(--color-primary-800)] rounded-full shadow-lg shadow-[var(--color-primary-800)]/30 z-0"
+                                            initial={false}
+                                            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                        />
+                                    )}
+                                    {!isActive(link.path) && (
+                                        <motion.div
+                                            whileHover={{ opacity: 1 }}
+                                            className="absolute inset-0 bg-white/50 rounded-full opacity-0 z-0"
+                                        />
+                                    )}
+                                </Link>
+
+                                {/* Dropdown Menu */}
+                                {link.dropdown && (
+                                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
+                                        <div className="bg-white rounded-2xl shadow-xl w-56 overflow-hidden border border-slate-100 p-2">
+                                            {link.dropdown.map((subItem) => (
+                                                <Link
+                                                    key={subItem.name}
+                                                    to={subItem.path}
+                                                    className={`block px-4 py-3 rounded-xl text-sm font-bold transition-colors ${location.pathname === subItem.path
+                                                        ? 'bg-[var(--color-primary-50)] text-[var(--color-primary-700)]'
+                                                        : 'text-slate-600 hover:bg-slate-50 hover:text-[var(--color-primary-600)]'
+                                                        }`}
+                                                >
+                                                    {subItem.name}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
                                 )}
-                                {!isActive(link.path) && (
-                                    <motion.div
-                                        whileHover={{ opacity: 1 }}
-                                        className="absolute inset-0 bg-white/50 rounded-full opacity-0 z-0"
-                                    />
-                                )}
-                            </Link>
+                            </div>
                         ))}
                     </div>
 
                     <div className="flex items-center gap-3">
-                        <Button variant="outline" size="sm" className="hidden lg:flex border-rose-100 text-rose-600 hover:bg-rose-50 hover:border-rose-200">
-                            <Heart className="w-4 h-4 mr-2 fill-rose-500 text-rose-500" />
-                            Donate
-                        </Button>
+                        <Link to="/donate">
+                            <Button variant="outline" size="sm" className="hidden lg:flex border-rose-100 text-rose-600 hover:bg-rose-50 hover:border-rose-200">
+                                <Heart className="w-4 h-4 mr-2 fill-rose-500 text-rose-500" />
+                                Donate
+                            </Button>
+                        </Link>
                         <Button variant="primary" size="sm" className="shadow-lg shadow-[var(--color-primary-500)]/20">Get Involved</Button>
                     </div>
                 </div>
@@ -96,34 +134,64 @@ const Navbar = () => {
             {/* Mobile Nav Overlay */}
             <AnimatePresence>
                 {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, y: -20, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: -20, scale: 0.95 }}
-                        className="absolute top-full left-0 w-[calc(100%-3rem)] mx-6 mt-4 bg-slate-900 md:hidden rounded-[2rem] border border-white/10 shadow-2xl overflow-hidden z-50 p-6"
-                    >
-                        <div className="flex flex-col items-center gap-4">
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.name}
-                                    to={link.path}
-                                    onClick={() => setIsOpen(false)}
-                                    className={`w-full py-4 px-6 rounded-2xl text-center text-lg font-bold transition-all ${isActive(link.path) ? 'bg-[var(--color-primary-800)] text-white shadow-xl shadow-[var(--color-primary-800)]/20' : 'text-white/70 active:bg-white/10'}`}
-                                >
-                                    {link.name}
-                                </Link>
-                            ))}
-                            <div className="flex flex-col gap-4 w-full mt-4">
-                                <Button variant="outline" className="w-full border-white/20 text-white hover:bg-white/10" onClick={() => setIsOpen(false)}>
-                                    <Heart className="w-4 h-4 mr-2" />
-                                    Donate
-                                </Button>
-                                <Button variant="secondary" className="w-full" onClick={() => setIsOpen(false)}>
-                                    Get Involved
-                                </Button>
+                    <>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
+                            onClick={() => setIsOpen(false)}
+                        />
+                        <motion.div
+                            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                            className="absolute top-full left-0 w-[calc(100%-3rem)] mx-6 mt-4 bg-slate-900 md:hidden rounded-[2rem] border border-white/10 shadow-2xl z-50 p-6 max-h-[80vh] overflow-y-auto no-scrollbar"
+                        >
+                            <div className="flex flex-col items-center gap-4">
+                                {navLinks.map((link) => (
+                                    <React.Fragment key={link.name}>
+                                        <Link
+                                            to={link.path}
+                                            onClick={() => setIsOpen(false)}
+                                            className={`w-full py-4 px-6 rounded-2xl text-center text-lg font-bold transition-all ${isActive(link.path) && !link.dropdown ? 'bg-[var(--color-primary-800)] text-white shadow-xl shadow-[var(--color-primary-800)]/20' : 'text-white/70 active:bg-white/10'}`}
+                                        >
+                                            {link.name}
+                                        </Link>
+                                        {/* Mobile Submenu */}
+                                        {link.dropdown && (
+                                            <div className="w-full flex flex-col gap-2 -mt-2 mb-2 bg-white/5 rounded-2xl p-2">
+                                                {link.dropdown.map(subItem => (
+                                                    <Link
+                                                        key={subItem.name}
+                                                        to={subItem.path}
+                                                        onClick={() => setIsOpen(false)}
+                                                        className={`py-3 px-4 rounded-xl text-center text-sm font-medium transition-colors ${location.pathname === subItem.path
+                                                            ? 'bg-white/10 text-white'
+                                                            : 'text-white/60 hover:text-white'
+                                                            }`}
+                                                    >
+                                                        {subItem.name}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </React.Fragment>
+                                ))}
+                                <div className="flex flex-col gap-4 w-full mt-4">
+                                    <Link to="/donate" onClick={() => setIsOpen(false)}>
+                                        <Button variant="outline" className="w-full border-white/20 text-white hover:bg-white/10">
+                                            <Heart className="w-4 h-4 mr-2" />
+                                            Donate
+                                        </Button>
+                                    </Link>
+                                    <Button variant="secondary" className="w-full" onClick={() => setIsOpen(false)}>
+                                        Get Involved
+                                    </Button>
+                                </div>
                             </div>
-                        </div>
-                    </motion.div>
+                        </motion.div>
+                    </>
                 )}
             </AnimatePresence>
         </nav>

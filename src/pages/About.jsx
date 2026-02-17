@@ -166,7 +166,7 @@ const About = () => {
                             { role: 'Executive Director', name: "JOSEPH KITHA", icon: <Users2 className="w-6 h-6" /> },
                             { role: 'Program Manager', name: "", icon: <Activity className="w-6 h-6" /> },
                             { role: 'Finance Officer', name: "MWAWI SOPHIE CHIRWA", icon: <TrendingUp className="w-6 h-6" /> },
-                            { role: 'SECRETARY GENERAL', name: "VINCENT MSOLIZA", icon: <Globe className="w-6 h-6" /> }
+                            { role: 'SECRETARY GENERAL', name: "", icon: <Globe className="w-6 h-6" /> }
                         ].map((member, i) => (
                             <motion.div
                                 key={i}

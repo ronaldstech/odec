@@ -25,6 +25,12 @@ const Home = () => {
         { title: 'Sustainable Community Initiatives', icon: <Users className="w-8 h-8" />, desc: 'Empowering communities through collaborative, long-term development projects.' },
         { title: 'Innovation & Tech Skills', icon: <GraduationCap className="w-8 h-8" />, desc: 'Equipping youth with cutting-edge technological and entrepreneurial capabilities.' },
         { title: 'Smart Agriculture & Value Addition', icon: <CloudRain className="w-8 h-8" />, desc: 'Transforming farming through technology and adding value to agricultural products.' },
+        {
+            title: 'Education',
+            icon: <GraduationCap className="w-8 h-8" />,
+            desc: 'Empowering institutions, educators, and learners through innovative technology solutions that enhance teaching effectiveness, improve accessibility, and add measurable value to educational products and services.'
+        }
+
     ];
 
     return (
@@ -118,7 +124,7 @@ const Home = () => {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
-                        className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
+                        className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
                     >
                         {priorities.map((item, index) => {
                             const gradients = [
@@ -126,21 +132,24 @@ const Home = () => {
                                 'from-blue-500/10 to-cyan-500/10',
                                 'from-purple-500/10 to-pink-500/10',
                                 'from-orange-500/10 to-red-500/10',
-                                'from-green-500/10 to-lime-500/10'
+                                'from-green-500/10 to-lime-500/10',
+                                'from-indigo-500/10 to-violet-500/10'
                             ];
                             const iconColors = [
                                 'text-emerald-600',
                                 'text-blue-600',
                                 'text-purple-600',
                                 'text-orange-600',
-                                'text-green-600'
+                                'text-green-600',
+                                'text-indigo-600'
                             ];
                             const hoverGradients = [
                                 'group-hover:from-emerald-500 group-hover:to-teal-500',
                                 'group-hover:from-blue-500 group-hover:to-cyan-500',
                                 'group-hover:from-purple-500 group-hover:to-pink-500',
                                 'group-hover:from-orange-500 group-hover:to-red-500',
-                                'group-hover:from-green-500 group-hover:to-lime-500'
+                                'group-hover:from-green-500 group-hover:to-lime-500',
+                                'group-hover:from-indigo-500 group-hover:to-violet-500'
                             ];
 
                             return (
