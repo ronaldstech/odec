@@ -26,7 +26,7 @@ const Projects = () => {
             icon: <HeartPulse className="w-6 h-6" />,
             description: 'Comprehensive health services, HIV/AIDS awareness, and safe maternity transport for communities.',
             details: ['Sports for Good Health', 'HIV/AIDS Care', 'Safe Maternity Transport', 'Safeguarding Awareness'],
-            image: 'https://images.unsplash.com/photo-1576091160550-217359f4ecf8?auto=format&fit=crop&q=80',
+            image: '4.jpeg',
             stats: '24/7 Support'
         },
         {
@@ -35,7 +35,7 @@ const Projects = () => {
             icon: <GraduationCap className="w-6 h-6" />,
             description: 'Building and renovating school blocks, providing scholarships, and promoting adult literacy.',
             details: ['School Block Renovation', 'Scholarships & Mentorship', 'Vocational Training', 'Gender-Sensitive Sanitation'],
-            image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80',
+            image: '5.jpeg',
             stats: '15 Schools'
         },
         {
@@ -44,7 +44,7 @@ const Projects = () => {
             icon: <Users className="w-6 h-6" />,
             description: 'Facilitating social entrepreneurship, menstrual hygiene, and leadership skills for girls and youths.',
             details: ['Social Entrepreneurship', 'Menstrual Hygiene', 'Health Committees', 'Skill Pass-on'],
-            image: 'https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&q=80',
+            image: '1.jpg',
             stats: '50+ Groups'
         },
         {
@@ -53,7 +53,7 @@ const Projects = () => {
             icon: <CloudRain className="w-6 h-6" />,
             description: 'Disaster risk management, reforestation, and promotion of energy saving equipment.',
             details: ['Forest-based Enterprise', 'Boreholes for Clean Water', 'Afforestation & Reforestation', 'Agro-forestry Actions'],
-            image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80',
+            image: '2.jpeg',
             stats: '10k Trees'
         }
     ];

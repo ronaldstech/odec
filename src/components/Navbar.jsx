@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Heart } from 'lucide-react';
+import {
+    Menu, X, Heart, Home, Info, LayoutGrid, Target,
+    Newspaper, PhoneCall, Megaphone, FileText, Star
+} from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
 
@@ -18,20 +21,21 @@ const Navbar = () => {
     }, []);
 
     const navLinks = [
-        { name: 'Home', path: '/' },
-        { name: 'About Us', path: '/about' },
-        { name: 'Projects', path: '/projects' },
-        { name: 'Mission', path: '/mission' },
+        { name: 'Home', path: '/', icon: Home },
+        { name: 'About Us', path: '/about', icon: Info },
+        { name: 'Projects', path: '/projects', icon: LayoutGrid },
+        { name: 'Mission', path: '/mission', icon: Target },
         {
             name: 'Newsletters',
             path: '/newsletters',
+            icon: Newspaper,
             dropdown: [
-                { name: 'Latest News', path: '/newsletters' },
-                { name: 'Annual Reports', path: '/reports' },
-                { name: 'Impact Stories', path: '/impact-stories' }
+                { name: 'Latest News', path: '/newsletters', icon: Megaphone },
+                { name: 'Annual Reports', path: '/reports', icon: FileText },
+                { name: 'Impact Stories', path: '/impact-stories', icon: Star }
             ]
         },
-        { name: 'Contact', path: '/contact' },
+        { name: 'Contact', path: '/contact', icon: PhoneCall },
     ];
 
     const isActive = (path) => {
@@ -67,10 +71,11 @@ const Navbar = () => {
                                             : 'text-[var(--color-text-main)] hover:text-[var(--color-primary-700)]'
                                         }`}
                                 >
-                                    <span className="relative z-10 flex items-center gap-1">
+                                    <span className="relative z-10 flex items-center gap-2">
+                                        <link.icon className="w-4 h-4" />
                                         {link.name}
                                         {link.dropdown && (
-                                            <svg className="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <svg className="w-3 h-3 transition-transform group-hover:rotate-180 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                             </svg>
                                         )}
@@ -104,7 +109,10 @@ const Navbar = () => {
                                                         : 'text-slate-600 hover:bg-slate-50 hover:text-[var(--color-primary-600)]'
                                                         }`}
                                                 >
-                                                    {subItem.name}
+                                                    <span className="flex items-center gap-3">
+                                                        <subItem.icon className="w-4 h-4" />
+                                                        {subItem.name}
+                                                    </span>
                                                 </Link>
                                             ))}
                                         </div>
@@ -121,7 +129,6 @@ const Navbar = () => {
                                 Donate
                             </Button>
                         </Link>
-                        <Button variant="primary" size="sm" className="shadow-lg shadow-[var(--color-primary-500)]/20">Get Involved</Button>
                     </div>
                 </div>
 
@@ -156,7 +163,10 @@ const Navbar = () => {
                                             onClick={() => setIsOpen(false)}
                                             className={`w-full py-4 px-6 rounded-2xl text-center text-lg font-bold transition-all ${isActive(link.path) && !link.dropdown ? 'bg-[var(--color-primary-800)] text-white shadow-xl shadow-[var(--color-primary-800)]/20' : 'text-white/70 active:bg-white/10'}`}
                                         >
-                                            {link.name}
+                                            <span className="flex items-center justify-center gap-3">
+                                                <link.icon className="w-5 h-5" />
+                                                {link.name}
+                                            </span>
                                         </Link>
                                         {/* Mobile Submenu */}
                                         {link.dropdown && (
@@ -171,7 +181,10 @@ const Navbar = () => {
                                                             : 'text-white/60 hover:text-white'
                                                             }`}
                                                     >
-                                                        {subItem.name}
+                                                        <span className="flex items-center justify-center gap-2">
+                                                            <subItem.icon className="w-4 h-4" />
+                                                            {subItem.name}
+                                                        </span>
                                                     </Link>
                                                 ))}
                                             </div>
@@ -185,9 +198,6 @@ const Navbar = () => {
                                             Donate
                                         </Button>
                                     </Link>
-                                    <Button variant="secondary" className="w-full" onClick={() => setIsOpen(false)}>
-                                        Get Involved
-                                    </Button>
                                 </div>
                             </div>
                         </motion.div>

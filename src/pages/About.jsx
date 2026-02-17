@@ -96,7 +96,7 @@ const About = () => {
                                         <p className="text-sm text-slate-500">Fully Accredited</p>
                                     </div>
                                     <div className="aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl">
-                                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80" alt="Youth" className="w-full h-full object-cover" />
+                                        <img src="6.jpeg" alt="Youth" className="w-full h-full object-cover" />
                                     </div>
                                 </motion.div>
                             </div>

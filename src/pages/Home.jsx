@@ -234,7 +234,7 @@ const Home = () => {
                             className="relative"
                         >
                             <div className="aspect-square rounded-[3rem] overflow-hidden rotate-3 hover:rotate-0 transition-transform duration-700 shadow-2xl">
-                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80" alt="Team" className="w-full h-full object-cover" />
+                                <img src="3.jpeg" alt="Team" className="w-full h-full object-cover" />
                             </div>
                             {/* Floating Stats Card */}
                             <motion.div

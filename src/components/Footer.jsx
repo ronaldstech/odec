@@ -39,6 +39,7 @@ const Footer = () => {
                         <li><span className="text-[var(--color-primary-200)]">Sustainable Community Initiatives</span></li>
                         <li><span className="text-[var(--color-primary-200)]">Innovation & Tech Skills</span></li>
                         <li><span className="text-[var(--color-primary-200)]">Smart Agriculture & Value Addition</span></li>
+                        <li><span className="text-[var(--color-primary-200)]">Education</span></li>
                     </ul>
                 </div>
 
