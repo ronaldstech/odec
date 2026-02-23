@@ -7,7 +7,11 @@ import {
     Zap,
     Users2,
     GraduationCap,
-    Radio
+    Radio,
+    Mail,
+    Phone,
+    Linkedin,
+    Twitter
 } from 'lucide-react';
 import Card from '../components/Card';
 
@@ -82,7 +86,7 @@ const About = () => {
                             <div className="grid grid-cols-2 gap-6">
                                 <motion.div initial={{ y: 40 }} whileInView={{ y: 0 }} className="space-y-6">
                                     <div className="aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl">
-                                        <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80" alt="Team" className="w-full h-full object-cover" />
+                                        <img src="7.jpeg" alt="Team" className="w-full h-full object-cover" />
                                     </div>
                                     <div className="p-8 bg-[var(--color-primary-900)] text-white rounded-[2.5rem] shadow-xl">
                                         <h4 className="text-3xl font-black mb-1">2024</h4>
@@ -163,31 +167,100 @@ const About = () => {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
-                            { role: 'Executive Director', name: "JOSEPH KITHA", icon: <Users2 className="w-6 h-6" /> },
-                            { role: 'Program Manager', name: "", icon: <Activity className="w-6 h-6" /> },
-                            { role: 'Finance Officer', name: "MWAWI SOPHIE CHIRWA", icon: <TrendingUp className="w-6 h-6" /> },
-                            { role: 'SECRETARY GENERAL', name: "", icon: <Globe className="w-6 h-6" /> }
+                            {
+                                role: 'Executive Director',
+                                name: "JOSEPH KITHA",
+                                image: "joseph.jpeg",
+                                icon: <Users2 className="w-6 h-6" />,
+                                bio: "Strategic leader with 5+ years of experience in project administration, communication, and community empowerment. Passionate about driving sustainable development in Malawi through grassroots initiatives.",
+                                contacts: {
+                                    email: "kitha.odec24@gmail.com",
+                                    phone: "+265993452511",
+                                    linkedin: "#",
+                                    twitter: "#"
+                                }
+                            },
+                            {
+                                role: 'Program Manager',
+                                name: "PROGRAM MANAGER",
+                                image: "",
+                                icon: <Activity className="w-6 h-6" />,
+                                contacts: { email: "#", phone: "#", linkedin: "#", twitter: "#" }
+                            },
+                            {
+                                role: 'Finance Officer',
+                                name: "MWAWI SOPHIE CHIRWA",
+                                image: "mwawi.jpeg",
+                                icon: <TrendingUp className="w-6 h-6" />,
+                                contacts: { email: "#", phone: "#", linkedin: "#", twitter: "#" }
+                            },
+                            {
+                                role: 'SECRETARY GENERAL',
+                                name: "SECRETARY GENERAL",
+                                image: "",
+                                icon: <Globe className="w-6 h-6" />,
+                                contacts: { email: "#", phone: "#", linkedin: "#", twitter: "#" }
+                            }
                         ].map((member, i) => (
                             <motion.div
                                 key={i}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 }}
-                                className="group relative"
+                                className="group bg-white rounded-[3rem] p-4 pb-8 shadow-sm hover:shadow-2xl transition-all border border-slate-100/50"
                             >
-                                <div className="aspect-[3/4] rounded-[2.5rem] overflow-hidden bg-slate-100 mb-6 relative">
-                                    <div className="absolute inset-0 bg-slate-200 animate-pulse group-hover:animate-none transition-all" />
+                                <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-slate-50 mb-6 relative shadow-inner">
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-slate-200 to-slate-100 animate-pulse group-hover:animate-none transition-all" />
                                     <div className="absolute inset-0 flex items-center justify-center text-slate-300">
-                                        <Users className="w-12 h-12 opacity-50" />
+                                        {member.image ? (
+                                            <img src={member.image} alt={member.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                                        ) : (
+                                            <Users className="w-12 h-12 opacity-30" />
+                                        )}
                                     </div>
-                                    <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent">
-                                        <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white mb-2">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+                                    <div className="absolute bottom-4 left-4">
+                                        <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 shadow-lg">
                                             {member.icon}
                                         </div>
                                     </div>
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-900">{member.name}</h3>
-                                <p className="text-slate-500 text-sm font-medium uppercase tracking-wider mt-1">{member.role}</p>
+
+                                {/* Static Social/Contact Links below picture */}
+                                {member.contacts && (
+                                    <div className="flex gap-4 mb-6 px-3">
+                                        {member.contacts.email && (
+                                            <a href={member.contacts.email !== "#" ? `mailto:${member.contacts.email}` : "#"} className="w-10 h-10 rounded-full bg-slate-50 text-[var(--color-primary-600)] flex items-center justify-center border border-slate-100 shadow-sm hover:bg-[var(--color-primary-600)] hover:text-white transition-all" title="Email">
+                                                <Mail className="w-4 h-4" />
+                                            </a>
+                                        )}
+                                        {member.contacts.phone && (
+                                            <a href={member.contacts.phone !== "#" ? `tel:${member.contacts.phone}` : "#"} className="w-10 h-10 rounded-full bg-slate-50 text-emerald-600 flex items-center justify-center border border-slate-100 shadow-sm hover:bg-emerald-600 hover:text-white transition-all" title="Phone">
+                                                <Phone className="w-4 h-4" />
+                                            </a>
+                                        )}
+                                        {member.contacts.linkedin && (
+                                            <a href={member.contacts.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-50 text-[#0077b5] flex items-center justify-center border border-slate-100 shadow-sm hover:bg-[#0077b5] hover:text-white transition-all" title="LinkedIn">
+                                                <Linkedin className="w-4 h-4" />
+                                            </a>
+                                        )}
+                                        {member.contacts.twitter && (
+                                            <a href={member.contacts.twitter} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-50 text-[#1DA1F2] flex items-center justify-center border border-slate-100 shadow-sm hover:bg-[#1DA1F2] hover:text-white transition-all" title="Twitter">
+                                                <Twitter className="w-4 h-4" />
+                                            </a>
+                                        )}
+                                    </div>
+                                )}
+
+                                <div className="px-3">
+                                    <h3 className="text-xl font-black text-slate-900 group-hover:text-[var(--color-primary-600)] transition-colors">{member.name || `Member ${i + 1}`}</h3>
+                                    <p className="text-[var(--color-primary-500)] text-xs font-bold uppercase tracking-widest mt-2">{member.role}</p>
+                                    {member.bio && (
+                                        <p className="text-slate-500 text-sm mt-4 leading-relaxed font-medium">
+                                            {member.bio}
+                                        </p>
+                                    )}
+                                </div>
                             </motion.div>
                         ))}
                     </div>
