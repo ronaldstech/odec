@@ -189,8 +189,8 @@ const About = () => {
                             },
                             {
                                 role: 'Program Manager',
-                                name: "PROGRAM MANAGER",
-                                image: "",
+                                name: "Alexander Msoliza Chirwa",
+                                image: "msoliza.jpeg",
                                 icon: <Activity className="w-5 h-5" />,
                                 contacts: { email: "#", phone: "#", linkedin: "#", twitter: "#" }
                             },
@@ -253,7 +253,7 @@ const About = () => {
                                 </div>
 
                                 <div className="px-2 flex-grow flex flex-col relative z-10">
-                                    <h3 className="text-xl font-black text-slate-800 mb-1 group-hover:text-[var(--color-primary-600)] transition-colors duration-300">
+                                    <h3 className="text-xl font-black uppercase text-slate-800 mb-1 group-hover:text-[var(--color-primary-600)] transition-colors duration-300">
                                         {member.name || `Member ${i + 1}`}
                                     </h3>
 
