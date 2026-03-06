@@ -11,7 +11,7 @@ const Donate = () => {
         swiftCode: 'SB1CMWMX'
     };
 
-    const copyToClipboard = (text) => {
+    const _copyToClipboard = (text) => {
         navigator.clipboard.writeText(text);
         // You might want to add a toast notification here in a real app
     };
