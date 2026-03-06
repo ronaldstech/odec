@@ -21,6 +21,8 @@ import ManageStories from './pages/admin/ManageStories';
 import ManageReports from './pages/admin/ManageReports';
 import ProtectedRoute from './components/ProtectedRoute';
 
+import { Analytics } from '@vercel/analytics/react';
+
 function App() {
   return (
     <Router>
@@ -47,6 +49,7 @@ function App() {
           </Route>
         </Routes>
       </Layout>
+      <Analytics />
     </Router>
   );
 }
