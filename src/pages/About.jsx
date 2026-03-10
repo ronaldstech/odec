@@ -191,6 +191,7 @@ const About = () => {
                                 role: 'Program Manager',
                                 name: "Alexander Msoliza Chirwa",
                                 image: "msoliza.jpeg",
+                                bio: "Dedicated professional with a background in theology, missions, bookkeeping, and farm management, currently advancing expertise through a Master’s in Theology. Experienced in community outreach, church planting, leadership, and financial record management. Skilled in teamwork, organization, mentoring, and basic ICT including Microsoft Word and Excel.",
                                 icon: <Activity className="w-5 h-5" />,
                                 contacts: { email: "#", phone: "#", linkedin: "#", twitter: "#" }
                             },
@@ -198,6 +199,7 @@ const About = () => {
                                 role: 'Finance Officer',
                                 name: "MWAWI SOPHIE CHIRWA",
                                 image: "mwawi.jpeg",
+                                bio: "Dedicated professional with a background in theology, missions, bookkeeping, and farm management. Experienced in community outreach, church planting, leadership, and financial record management. Skilled in teamwork, organization, and basic ICT including Microsoft Word and Excel.",
                                 icon: <TrendingUp className="w-5 h-5" />,
                                 contacts: { email: "#", phone: "#", linkedin: "#", twitter: "#" }
                             },
