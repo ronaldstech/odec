@@ -191,7 +191,7 @@ const About = () => {
                                 role: 'Program Manager',
                                 name: "Alexander Msoliza Chirwa",
                                 image: "msoliza.jpeg",
-                                bio: "Dedicated professional with a background in theology, missions, bookkeeping, and farm management, currently advancing expertise through a Master’s in Theology. Experienced in community outreach, church planting, leadership, and financial record management. Skilled in teamwork, organization, mentoring, and basic ICT including Microsoft Word and Excel.",
+                                bio: "Christian minister and theological educator with a Master of Divinity and extensive experience in pastoral leadership, teaching, and missions. Over two decades of service in church ministry, community leadership, and theological training within Assemblies of God congregations in Malawi. Committed to spiritual leadership, community development, and mentoring church leaders.",
                                 icon: <Activity className="w-5 h-5" />,
                                 contacts: { email: "#", phone: "#", linkedin: "#", twitter: "#" }
                             },
