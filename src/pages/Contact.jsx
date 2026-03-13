@@ -49,7 +49,7 @@ const Contact = () => {
                                 <div>
                                     <h4 className="text-lg font-bold mb-1">Call Us</h4>
                                     <p className="text-[var(--color-text-muted)]">+265 (0) 993 452 511</p>
-                                    <p className="text-[var(--color-text-muted)]">+265 (0) 998 523 213</p>
+                                    <p className="text-[var(--color-text-muted)]">+265 (0) 988 334 077</p>
                                 </div>
                             </div>
 
